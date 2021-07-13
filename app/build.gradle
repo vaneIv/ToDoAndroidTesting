@@ -54,6 +54,7 @@ dependencies {
     implementation "androidx.legacy:legacy-support-v4:$androidXLegacySupport"
     implementation "androidx.room:room-runtime:$roomVersion"
     kapt "androidx.room:room-compiler:$roomVersion"
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
     // Architecture Components
     implementation "androidx.room:room-runtime:$roomVersion"
