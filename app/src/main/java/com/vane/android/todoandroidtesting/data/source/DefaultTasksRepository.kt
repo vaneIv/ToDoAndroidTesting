@@ -14,7 +14,7 @@ import kotlinx.coroutines.*
 /**
  * Concrete implementation to load tasks from the data sources into a cache.
  */
-class DefaultTaskRepository private constructor(application: Application) {
+class DefaultTasksRepository private constructor(application: Application) {
 
     private val tasksRemoteDataSource: TaskDataSource
     private val tasksLocalDataSource: TaskDataSource
@@ -22,11 +22,11 @@ class DefaultTaskRepository private constructor(application: Application) {
 
     companion object {
         @Volatile
-        private var INSTANCE: DefaultTaskRepository? = null
+        private var INSTANCE: DefaultTasksRepository? = null
 
-        fun getRepository(app: Application): DefaultTaskRepository {
+        fun getRepository(app: Application): DefaultTasksRepository {
             return INSTANCE ?: synchronized(this) {
-                DefaultTaskRepository(app).also {
+                DefaultTasksRepository(app).also {
                     INSTANCE = it
                 }
             }
