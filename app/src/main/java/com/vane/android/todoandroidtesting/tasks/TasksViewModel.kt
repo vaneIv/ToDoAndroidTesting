@@ -151,7 +151,7 @@ class TasksViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    fun completedTasks(task: Task, completed: Boolean) = viewModelScope.launch {
+    fun completeTask(task: Task, completed: Boolean) = viewModelScope.launch {
         if (completed) {
             tasksRepository.completeTask(task)
             showSnackbarMessage(R.string.task_marked_complete)
