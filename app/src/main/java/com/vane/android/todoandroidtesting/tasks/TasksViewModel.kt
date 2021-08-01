@@ -112,7 +112,7 @@ class TasksViewModel(application: Application) : AndroidViewModel(application) {
     /**
      * @param forceUpdate   Pass in true to refresh the data in the [TasksDataSource]
      */
-    private fun loadTasks(forceUpdate: Boolean) {
+    fun loadTasks(forceUpdate: Boolean) {
         _forceUpdate.value = forceUpdate
     }
 
