@@ -69,6 +69,8 @@ class TaskDetailFragment : Fragment() {
             viewmodel = viewModel
         }
 
+        viewDataBinding.lifecycleOwner = this.viewLifecycleOwner
+
         viewModel.start(args.taskId)
 
         setHasOptionsMenu(true)

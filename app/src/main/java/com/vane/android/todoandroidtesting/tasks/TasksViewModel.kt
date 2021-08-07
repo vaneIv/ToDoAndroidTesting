@@ -81,6 +81,13 @@ class TasksViewModel(application: Application) : AndroidViewModel(application) {
         loadTasks(true)
     }
 
+    /**
+     * Sets the current task filtering type.
+     *
+     * @param requestType Can be [TasksFilterType.ALL_TASKS],
+     * [TasksFilterType.COMPLETED_TASKS], or
+     * [TasksFilterType.ACTIVE_TASKS]
+     */
     fun setFiltering(requestType: TasksFilterType) {
         currentFiltering = requestType
 
@@ -189,7 +196,7 @@ class TasksViewModel(application: Application) : AndroidViewModel(application) {
         _snackBarText.value = Event(message)
     }
 
-    private fun filterItems(tasks: List<Task>, filteringType: TasksFilterType): List<Task>? {
+    private fun filterItems(tasks: List<Task>, filteringType: TasksFilterType): List<Task> {
         val tasksToShow = ArrayList<Task>()
         // We filter the tasks based on the requestType
         for (task in tasks) {

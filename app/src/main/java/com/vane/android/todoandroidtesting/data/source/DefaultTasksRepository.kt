@@ -128,7 +128,7 @@ class DefaultTasksRepository private constructor(application: Application) {
     suspend fun activateTask(task: Task) = withContext<Unit>(ioDispatcher) {
         coroutineScope {
             launch { tasksRemoteDataSource.activateTask(task) }
-            launch { tasksLocalDataSource.completeTask(task) }
+            launch { tasksLocalDataSource.activateTask(task) }
         }
     }
 
